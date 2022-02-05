@@ -1,0 +1,59 @@
+body,
+html,
+div#main {
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0;
+}
+
+canvas {
+  touch-action: none;
+}
+div.fade-parent {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+div.fade-parent.fade-in {
+  opacity: 1;
+}
+
+.position-overlay {
+  font-size: 14px;
+  width: 3em;
+  text-align: center;
+  line-height: 1em;
+  will-change: transform;
+  pointer-events: none;
+  touch-action: none;
+  user-select: none;
+}
+
+div.text-overlay {
+  @extend .position-overlay;
+  color: white;
+  margin-left: -1.5em;
+  margin-top: -0.5em;
+}
+div.position-overlay-x {
+  @extend .position-overlay;
+  color: black;
+  margin-left: -1.5em;
+  margin-top: -0.5em;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  text-shadow: 2px 2px 2px #fff, -2px -2px 2px #fff;
+}
+
+div.position-overlay-y {
+  @extend .position-overlay;
+  color: black;
+  text-shadow: 2px 2px 2px #fff, -2px -2px 2px #fff;
+  margin-left: -1.5em;
+  margin-top: -0.5em;
+}
