@@ -1,13 +1,14 @@
 import MenuIcon from "@mui/icons-material/Menu"
 import AppBar from "@mui/material/AppBar"
+import Divider from "@mui/material/Divider"
 import IconButton from "@mui/material/IconButton"
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
 import Toolbar from "@mui/material/Toolbar"
-import Divider from "@mui/material/Divider"
 import Typography from "@mui/material/Typography"
 import { useRef, useState } from "react"
-import { exportChoreo, importChoreo } from "../../store/ChoreoExporter"
+import { exportChoreo } from "../../store/ChoreoExporter"
+import { importChoreo } from "../../store/ChoreoImporter"
 import useChoreoStore from "../../store/useChoreoStore"
 import useViewStore from "../../store/useViewStore"
 export default function DefaultAppBar() {
@@ -34,6 +35,7 @@ export default function DefaultAppBar() {
         type="file"
         style={{ display: "none" }}
         ref={input}
+        accept=".txt, .json, .choreo"
         onChange={async (e) => {
           const files = e.currentTarget.files
           if (files) {

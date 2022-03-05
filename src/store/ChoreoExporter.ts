@@ -17,19 +17,3 @@ function saveFile(blob: Blob, filename: string) {
     document.body.removeChild(a)
   }, 0)
 }
-
-export const importChoreo = async (files: FileList | null) => {
-  try {
-    if (files?.length) {
-      const file = files.item(0)
-      if (!file) return
-      const text = await file.text()
-      const choreo = JSON.parse(text || "{}") as Choreography
-      if (choreo?.floor && choreo.images?.length && choreo.persons > 0) {
-        return choreo
-      }
-    }
-  } catch (e) {
-    alert("Fehler beim Laden!")
-  }
-}
